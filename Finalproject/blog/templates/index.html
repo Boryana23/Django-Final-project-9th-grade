@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in posts %}
+    <div class="post">
+        {% load staticfiles %}
+        <h2><a href="/posts/{{ post.id }}">{{ post.title }}</a></h2>
+        <div class="date">{{ post.time_created }}</div>
+            
+        <img scr = "{{ blog.image.url }}" class="img-responsive" alt="Image"/>
+        
+        <p>{{ post.content|linebreaksbr }}</p>
+    </div>
+    {%endfor%}
+{% endblock content %}
