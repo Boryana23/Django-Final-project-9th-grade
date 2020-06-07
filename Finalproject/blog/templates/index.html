@@ -5,10 +5,9 @@
         {% load staticfiles %}
         <h2><a href="/posts/{{ post.id }}">{{ post.title }}</a></h2>
         <div class="date">{{ post.time_created }}</div>
-            
+    </br>
+        <p>{{ post.text|linebreaksbr }}</p>
         <img scr = "{{ blog.image.url }}" class="img-responsive" alt="Image"/>
-        
-        <p>{{ post.content|linebreaksbr }}</p>
     </div>
     {%endfor%}
 {% endblock content %}
